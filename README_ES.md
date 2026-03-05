@@ -54,6 +54,19 @@ Este proyecto prioriza la **amplitud de superficies de ejecución** por sobre la
 Está pensado para ayudar a responder la pregunta:
 **“¿Qué caminos de ejecución son siquiera posibles en este contexto?”**
 
+---
+
+## Contribuir
+
+Las pull requests son bienvenidas si:
+
+* Agregan nuevos **contextos de ejecución, vectores de inyección o comportamientos del navegador** que aún no estén documentados
+* Mejoran la **organización de payloads, legibilidad o explicaciones contextuales**
+* Aportan **valor educativo**, ayudando a entender cómo los navegadores interpretan y ejecutan input no confiable
+* Mantienen la filosofía del proyecto: **referencia para investigación manual, no explotación automatizada**
+
+---
+
 ## Disclaimer
 
 Este repositorio se provee **únicamente con fines educativos y para testing de seguridad autorizado**.
