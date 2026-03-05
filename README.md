@@ -49,6 +49,19 @@ This project prioritizes **breadth of execution surfaces** rather than exploit r
 It is meant to help answer the question:  
 **“What execution paths are even possible in this context?”**
 
+---
+
+## Contributing
+
+Pull requests are welcome if they:
+
+* Add new **execution contexts, injection vectors, or browser behaviors** not yet documented
+* Improve **payload categorization, readability, or contextual explanations**
+* Contribute **educational value**, helping researchers better understand how browsers interpret and execute untrusted input
+* Preserve the project's philosophy: **manual research reference, not automated exploitation**
+
+---
+
 ## Disclaimer
 This repository is provided **for educational and authorized security testing only**.  
 Do not use these payloads on systems you do not own or have explicit permission to test.
